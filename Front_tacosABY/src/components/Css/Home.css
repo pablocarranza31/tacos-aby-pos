@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* CONTENEDOR GENERAL */
+.home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f3f4f6;
+  padding: 20px;
+}
+
+/* TARJETA */
+.home-container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  padding: 30px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+/* TEXTO */
+.home-text {
+  color: #111;
+  font-size: 17px;
+  margin-bottom: 25px;
+  line-height: 1.4;
+}
+
+/* OPCIONES */
+.opctions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* TITULO OPCIONES */
+.opctions-text {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* TARJETA DE OPCIÓN */
+.opctions-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #0078ff;
+  color: #fff;
+  border-radius: 14px;
+  padding: 14px 18px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* HOVER */
+.opctions-btn:hover {
+  background: #005fcc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* BOTÓN INTERNO */
+.opctions-btn button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ICONO */
+.opctions-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .home-container {
+    padding: 25px 20px;
+  }
+
+  .opctions-btn {
+    padding: 12px 15px;
+  }
+
+  .home-text {
+    font-size: 16px;
+  }
+}

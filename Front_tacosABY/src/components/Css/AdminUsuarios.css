@@ -1,0 +1,23 @@
+.admin-usuarios {
+  max-width: 400px;
+  margin: 40px auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input, select, button {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #0078ff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}

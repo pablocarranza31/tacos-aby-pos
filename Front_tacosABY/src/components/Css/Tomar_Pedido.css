@@ -1,0 +1,204 @@
+/* CONTENEDOR PRINCIPAL */
+.tomar-pedido-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 35px;
+  background-color: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  color: #111;
+  border-bottom: 3px solid #e5e7eb;
+  padding-bottom: 12px;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+/* SECCIONES */
+.section {
+  background-color: #f9fafb;
+  padding: 22px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+}
+
+/* INPUT GROUP */
+.inputGroup {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 18px;
+  align-items: flex-start;
+}
+
+/* LABEL */
+.label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 14px;
+  color: #374151;
+  flex: 1;
+}
+
+/* INPUT / SELECT */
+.input,
+.select {
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: #0078ff;
+  box-shadow: 0 0 0 3px rgba(0, 120, 255, 0.15);
+}
+
+/* CONTROLES SUBITEM */
+.subItemControls {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 15px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 15px;
+}
+
+/* BOTONES */
+.buttonPrimary {
+  padding: 12px 18px;
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.25s, transform 0.2s;
+  min-width: 160px;
+}
+
+.buttonPrimary:hover {
+  background-color: #15803d;
+  transform: translateY(-2px);
+}
+
+.buttonSecondary {
+  padding: 10px 15px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.25s, transform 0.2s;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.buttonSecondary:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.buttonRemove {
+  padding: 6px 10px;
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* LISTAS */
+.subItemsList {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.subItemListItem {
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed #e5e7eb;
+  font-size: 14px;
+}
+
+/* RESUMEN PEDIDO */
+.pedidoSummary {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.pedidoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 15px;
+}
+
+/* TOTAL */
+.total {
+  text-align: right;
+  font-size: 1.6em;
+  color: #16a34a;
+  margin-top: 20px;
+  font-weight: 800;
+}
+
+/* DESHABILITADO */
+.disabledButton {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* OPTIONS */
+.option {
+  border-radius: 6px;
+  background-color: #f3f4f6;
+  font-family: inherit;
+}
+
+/* TITULOS */
+.section h5 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .tomar-pedido-container {
+    padding: 20px;
+    margin: 15px;
+  }
+
+  .inputGroup {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .subItemControls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .buttonPrimary,
+  .buttonSecondary {
+    width: 100%;
+    text-align: center;
+  }
+}
