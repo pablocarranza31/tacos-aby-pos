@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 });
 
 
-app.post('/usuarios', crearUsuario);
+app.post('/usuarios',verificarToken,soloAdmin, crearUsuario);
 
 app.use('/auth', authRouter);
 
