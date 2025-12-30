@@ -3,6 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 import './Css/Home.css';
+import cajeroIcon from '../assets/icons/caja-registradora.png';
+import meseroIcon from '../assets/icons/camarero.png';
+import adminIcon from '../assets/icons/admin.png';
+import cocineroIcon from '../assets/icons/cocinero.png';
 
 function Home() {
     const navigate = useNavigate();
@@ -47,7 +51,7 @@ function Home() {
           {(rol === 'admin' || rol === 'mesero') && (
             <div className='opctions-btn' onClick={handleMeseroClick}>
               <button className='opctions-btn'>Mesero</button>
-              <img className='opctions-img' src='src/assets/icons/camarero.png' />
+              <img className='opctions-img' src={meseroIcon} />
             </div>
           )}
 
@@ -55,7 +59,7 @@ function Home() {
           {(rol === 'admin' || rol === 'cocinero') && (
             <div className='opctions-btn'>
               <button className='opctions-btn'>Cocinero</button>
-              <img className='opctions-img' src='src/assets/icons/cocinero.png' />
+              <img className='opctions-img' src={cocineroIcon} />
             </div>
           )}
 
@@ -63,14 +67,14 @@ function Home() {
           {(rol === 'admin' || rol === 'cajero') && (
             <div className='opctions-btn'>
               <button className='opctions-btn'>Cajero</button>
-              <img className='opctions-img' src='src/assets/icons/caja-registradora.png' />
+              <img className='opctions-img' src={cajeroIcon} />
             </div>
           )}
            {/* Administrador */}
           {(rol === 'admin') && (
             <div className='opctions-btn' onClick={handleAdminClick}>
               <button className='opctions-btn'>Administrador</button>
-              <img className='opctions-img' src='src/assets/icons/admin.png' />
+              <img className='opctions-img' src={adminIcon} />
             </div>
           )}
 
