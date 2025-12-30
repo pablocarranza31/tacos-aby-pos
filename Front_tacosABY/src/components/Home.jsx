@@ -3,10 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 import './Css/Home.css';
-import cajeroIcon from '../assets/icons/caja-registradora.png';
-import meseroIcon from '../assets/icons/camarero.png';
-import adminIcon from '../assets/icons/admin.png';
-import cocineroIcon from '../assets/icons/cocinero.png';
 
 function Home() {
     const navigate = useNavigate();
@@ -51,7 +47,7 @@ function Home() {
           {(rol === 'admin' || rol === 'mesero') && (
             <div className='opctions-btn' onClick={handleMeseroClick}>
               <button className='opctions-btn'>Mesero</button>
-              <img className='opctions-img' src={meseroIcon} />
+              <img className='opctions-img' src='/icons/caja-registradora.png' />
             </div>
           )}
 
