@@ -15,7 +15,7 @@ function Login() {
     e.preventDefault(); //  evita recarga
 
     try {
-      const res = await api.post('/auth/login', {
+      const res = await axios.post('https://backend-tacos-aby.onrender.com/auth/login', {
         usuario,
         contrasena
       });
