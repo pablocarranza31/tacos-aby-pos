@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 import './Css/Login.css'; 
+import api from '../api/axiosConfig';
 
 
 function Login() {
@@ -11,10 +12,10 @@ function Login() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // ⛔ evita recarga
+    e.preventDefault(); //  evita recarga
 
     try {
-      const res = await axios.post('http://localhost:3000/auth/login', {
+      const res = await api.post('/auth/login', {
         usuario,
         contrasena
       });
