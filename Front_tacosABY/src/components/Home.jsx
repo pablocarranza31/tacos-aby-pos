@@ -47,7 +47,7 @@ function Home() {
           {(rol === 'admin' || rol === 'mesero') && (
             <div className='opctions-btn' onClick={handleMeseroClick}>
               <button className='opctions-btn'>Mesero</button>
-              <img className='opctions-img' src='/icons/camarero.png' />
+              <img className='opctions-img' src={`${import.meta.env.BASE_URL}icons/camarero.png`} />
             </div>
           )}
 
@@ -55,7 +55,7 @@ function Home() {
           {(rol === 'admin' || rol === 'cocinero') && (
             <div className='opctions-btn'>
               <button className='opctions-btn'>Cocinero</button>
-              <img className='opctions-img' src='/icons/cocinero.png' />
+              <img className='opctions-img' src={`${import.meta.env.BASE_URL}icons/cocinero.png`} />
             </div>
           )}
 
@@ -63,7 +63,7 @@ function Home() {
           {(rol === 'admin' || rol === 'cajero') && (
             <div className='opctions-btn'>
               <button className='opctions-btn'>Cajero</button>
-              <img className='opctions-img' src='/icons/caja-registradora.png' />
+              <img className='opctions-img' src={`${import.meta.env.BASE_URL}icons/caja-registradora.png`} />
             </div>
           )}
            {/* Administrador */}
