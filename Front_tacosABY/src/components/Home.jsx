@@ -70,7 +70,9 @@ function Home() {
           {(rol === 'admin') && (
             <div className='opctions-btn' onClick={handleAdminClick}>
               <button className='opctions-btn'>Administrador</button>
-              <img className='opctions-img' src={`${import.meta.env.BASE_URL}icons/admin.png`} />
+              <img className='opctions-img' 
+              //src={`${import.meta.env.BASE_URL}icons/admin.png`} 
+              />
             </div>
           )}
 
