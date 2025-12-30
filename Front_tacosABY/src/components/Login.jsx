@@ -29,7 +29,7 @@ function Login() {
       const decoded = jwtDecode(token);
       console.log('Usuario:', decoded);
 
-      navigate('/home'); // ✅ redirige
+      navigate('/home'); //  redirige
     } catch (error) {
       alert('Usuario o contraseña incorrectos');
     }
