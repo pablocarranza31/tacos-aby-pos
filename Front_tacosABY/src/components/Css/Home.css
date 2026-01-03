@@ -1,103 +1,115 @@
+/* ===== Reset base ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
-/* CONTENEDOR GENERAL */
+/* ===== Variables ===== */
+:root {
+  --primary: #0d6efd;
+  --primary-hover: #0b5ed7;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --muted: #6c757d;
+  --border: #dee2e6;
+  --radius: 0.75rem;
+  --transition: all 0.2s ease-in-out;
+}
+
+/* ===== Contenedor general ===== */
 .home-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
-  background: #f3f4f6;
-  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f3f5;
+  padding: 1rem;
 }
 
-/* TARJETA */
+/* ===== Card ===== */
 .home-container {
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-  padding: 30px;
   width: 100%;
-  max-width: 420px;
+  max-width: 440px;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15);
   text-align: center;
 }
 
-/* TEXTO */
+/* ===== Texto principal ===== */
 .home-text {
-  color: #111;
-  font-size: 17px;
-  margin-bottom: 25px;
-  line-height: 1.4;
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 1.75rem;
+  line-height: 1.5;
 }
 
-/* OPCIONES */
+/* ===== Opciones ===== */
 .opctions {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 1rem;
 }
 
-/* TITULO OPCIONES */
+/* ===== Título ===== */
 .opctions-text {
-  font-size: 18px;
+  font-size: 1.05rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
 }
 
-/* TARJETA DE OPCIÓN */
+/* ===== Botón tipo card ===== */
 .opctions-btn {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  background: #0078ff;
-  color: #fff;
-  border-radius: 14px;
-  padding: 14px 18px;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  background-color: var(--primary);
+  color: #ffffff;
+  border-radius: var(--radius);
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: var(--transition);
 }
 
-/* HOVER */
+/* ===== Hover ===== */
 .opctions-btn:hover {
-  background: #005fcc;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
-/* BOTÓN INTERNO */
+/* ===== Texto del botón ===== */
 .opctions-btn button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 16px;
+  all: unset;
+  color: #ffffff;
+  font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
 }
 
-/* ICONO */
+/* ===== Icono ===== */
 .opctions-img {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
 }
 
-/* RESPONSIVE */
+/* ===== Responsive ===== */
 @media (max-width: 480px) {
   .home-container {
-    padding: 25px 20px;
+    padding: 1.5rem;
   }
 
   .opctions-btn {
-    padding: 12px 15px;
+    padding: 0.75rem 0.9rem;
   }
 
   .home-text {
-    font-size: 16px;
+    font-size: 0.9rem;
   }
 }
