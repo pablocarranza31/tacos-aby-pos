@@ -21,6 +21,20 @@
   margin-bottom: 16px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.platoGrid {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 14px;
+}
+
+.platoGridFull {
+  grid-column: 1 / -1;
+}
 
 /* ===== HEADER ===== */
 .header {

@@ -163,7 +163,7 @@ function Tomar_Pedido() {
                     {/* --- SECCIÓN DATOS DEL CLIENTE (simplificado) --- */}
                     <h5>Datos del Cliente y Mesa</h5>
                     {/* ... (inputs de Nombre y Mesa) ... */}
-                    <div className="inputGroup">
+                    <div className="formGrid">
                         <label className='label'>Nombre del cliente:
                             <input className='input' type="text" value={nombreCliente} onChange={(e) => setNombreCliente(e.target.value)} required />
                         </label>
@@ -182,6 +182,7 @@ function Tomar_Pedido() {
                 {/* 1.1 Selector y Añadir Sub-Item */}
                 <div className="section">
                     <h5>Crea el Plato </h5>
+                    <div className="platoGrid"> 
                     <label className='label'>
                         Cantidad de Producto:
                         <input 
@@ -209,7 +210,7 @@ function Tomar_Pedido() {
                             ))}
                         </select>
                     </label>
-                    <label className='label'>
+                    <label className='label platoGridFull'>
                         Descripcion:
                         <input 
                             type="text" 
@@ -218,6 +219,7 @@ function Tomar_Pedido() {
                             className='input'
                         />
                     </label>
+                    </div>
                     <button 
                         type="button"
                         onClick={handleSubItemAdd}
