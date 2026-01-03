@@ -35,7 +35,7 @@ function Tomar_Pedido() {
         const producto = MENU_PRODUCTOS.find(p => p.id === subProductoSeleccionadoId);
         
         if (producto && subCantidadSeleccionada > 0) {
-            const nuevoSubItem = {
+            const nuevoSubItem = { 
                 id: producto.id,
                 nombre: producto.nombre,
                 precio: producto.precio,
@@ -147,6 +147,12 @@ function Tomar_Pedido() {
         setItemsPedido(nuevosItems);
     };
 
+    const sanitizeCantidad = (value) => {
+        const numero = parseInt(value, 10);
+
+            return isNaN(numero) || numero < 1 ? 1 : numero; 
+    };
+
     // --- RENDERIZADO (JSX) ---
 
     return (
@@ -182,7 +188,7 @@ function Tomar_Pedido() {
                             type="number" 
                             min="1" 
                             value={subCantidadSeleccionada}
-                            onChange={(e) => setSubCantidadSeleccionada(parseInt(e.target.value))}
+                            onChange={(e) => setSubCantidadSeleccionada(sanitizeCantidad(e.target.value))}
                             className='input'
                         />
                     </label>
