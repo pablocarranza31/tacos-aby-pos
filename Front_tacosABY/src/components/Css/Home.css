@@ -146,6 +146,54 @@
   backdrop-filter: blur(4px);
 }
 
+/* ===== Badge Rol ===== */
+.rol-badge {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff5722, #ffc107);
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+/* ===== Colores por rol ===== */
+.opctions-btn.mesero {
+  background: linear-gradient(135deg, #4caf50, #8bc34a);
+}
+
+.opctions-btn.cocinero {
+  background: linear-gradient(135deg, #ff9800, #ffc107);
+}
+
+.opctions-btn.cajero {
+  background: linear-gradient(135deg, #03a9f4, #00bcd4);
+}
+
+.opctions-btn.admin {
+  background: linear-gradient(135deg, #9c27b0, #673ab7);
+}
+
+/* Hover individual */
+.opctions-btn.mesero:hover {
+  box-shadow: 0 1rem 2rem rgba(76, 175, 80, 0.45);
+}
+
+.opctions-btn.cocinero:hover {
+  box-shadow: 0 1rem 2rem rgba(255, 152, 0, 0.45);
+}
+
+.opctions-btn.cajero:hover {
+  box-shadow: 0 1rem 2rem rgba(3, 169, 244, 0.45);
+}
+
+.opctions-btn.admin:hover {
+  box-shadow: 0 1rem 2rem rgba(156, 39, 176, 0.45);
+}
+
+
 /* ===== Responsive ===== */
 @media (max-width: 480px) {
   .home-container {
