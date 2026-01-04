@@ -10,12 +10,15 @@ function Login() {
   const [usuario, setUsuario] = useState('');
   const [contrasena, setContrasena] = useState('');
   const navigate = useNavigate();
+  const API_URL = import.meta.env.VITE_API_URL
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault(); //  evita recarga
 
     try {
-      const res = await axios.post('https://backend-tacos-aby.onrender.com/auth/login', {
+      const res = await axios.post(`${API_URL}/auth/login`, {
         usuario,
         contrasena
       });

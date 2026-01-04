@@ -26,7 +26,7 @@ router.post('/login', async (req, res) => {
     }
 
     const token = jwt.sign(
-      { id: user.id_usuario, rol: user.rol },
+      { id: user.id_usuario, rol: user.rol, nombre: user.nombre },
       process.env.JWT_SECRET,
       { expiresIn: '8h' }
     );
@@ -38,6 +38,7 @@ router.post('/login', async (req, res) => {
     });
 
   } catch (err) {
+    console.error('ERROR LOGIN:', err);
     res.status(500).json(err);
   }
 });

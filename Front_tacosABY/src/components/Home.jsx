@@ -6,6 +6,7 @@ import './Css/Home.css';
 function Home() {
   const navigate = useNavigate();
   const [rol, setRol] = useState(null);
+  const [nombre, setNombre] = useState('');
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -18,6 +19,8 @@ function Home() {
     try {
       const decoded = jwtDecode(token);
       setRol(decoded.rol);
+      setNombre(decoded.nombre);
+
     } catch {
       localStorage.removeItem('token');
       navigate('/');
@@ -30,7 +33,7 @@ function Home() {
 
         <div className="home-text">
           Bienvenido <br />
-          <span className="rol-badge">{rol}</span>
+          <span className="rol-badge">{nombre}</span>
         </div>
 
         <div className="opctions">
