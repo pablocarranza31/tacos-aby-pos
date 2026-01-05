@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 import './Css/Home.css';
+import Navbar from './Navbar';
 
 function Home() {
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="home-page">
+    <div className="home-page"> 
       <div className="home-container">
 
         <div className="home-text">

@@ -18,4 +18,13 @@ async function crearUsuario(req, res) {
   }
 }
 
-module.exports = { crearUsuario };
+async function obtenerUsuarios(req, res) {
+  try {
+    const result = await pool.query('SELECT id_usuario AS id, nombre, usuario, rol FROM usuarios');
+    res.json(result.rows);
+  } catch (error) {
+    res.status(500).json({ error: 'Error al obtener usuarios' });
+  }
+}
+
+module.exports = { crearUsuario, obtenerUsuarios };

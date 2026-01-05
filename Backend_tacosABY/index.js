@@ -16,7 +16,7 @@ app.use(cors({
 }));
 app.use(express.json());
 const authRouter = require('./auth');
-const { crearUsuario } = require('./usuarios.controller');
+const { crearUsuario,obtenerUsuarios } = require('./usuarios.controller');
 const verificarToken = require('./middleware/auth');
 const soloAdmin = require('./middleware/soloAdmin');
 
@@ -27,6 +27,8 @@ app.get('/', (req, res) => {
 
 
 app.post('/usuarios',verificarToken,soloAdmin, crearUsuario);
+
+app.get('/usuarios/lista',verificarToken,soloAdmin, obtenerUsuarios);
 
 app.use('/auth', authRouter);
 

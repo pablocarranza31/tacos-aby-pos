@@ -1,14 +1,41 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import api from '../api/axiosConfig'; // si no lo tienes, abajo te lo doy
 import './Css/AdminUsuarios.css';
+import Navbar from './Navbar';
+import TablaUsuarios from './TablaUsuarios';
 
-function AdminUsuarios() {
-  const [form, setForm] = useState({
+function AdminUsuarios()
+{const [form, setForm] = useState({
     nombre: '',
     usuario: '',
     contrasena: '',
     rol: 'mesero'
   });
+  const [loading, setLoading] = useState(true);
+  const [usuarios, setUsuarios] = useState([]);
+
+
+  useEffect(() => {
+    obtenerUsuarios();
+  }, []);
+
+   const obtenerUsuarios = async () => {
+    try {
+      const response = await api.get('/usuarios/lista');
+      setUsuarios(response.data);
+    } catch (error) {
+      console.error('Error al cargar usuarios', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) return <p>Cargando usuarios...</p>;
+
+
+
+
+  
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -27,6 +54,9 @@ function AdminUsuarios() {
   };
 
   return (
+    <><Navbar />
+
+    
     <div className="admin-usuarios">
       <h2>Crear Usuario</h2>
 
@@ -66,6 +96,9 @@ function AdminUsuarios() {
         <button type="submit">Crear Usuario</button>
       </form>
     </div>
+    <h2>Lista de Usuarios</h2>
+      <TablaUsuarios usuarios={usuarios} />
+    </>
   );
 }
 
