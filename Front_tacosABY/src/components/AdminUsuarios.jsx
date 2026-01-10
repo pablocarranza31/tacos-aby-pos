@@ -3,6 +3,8 @@ import api from '../api/axiosConfig'; // si no lo tienes, abajo te lo doy
 import './Css/AdminUsuarios.css';
 import Navbar from './Navbar';
 import TablaUsuarios from './TablaUsuarios';
+import { useNavigate } from 'react-router-dom';
+import { jwtDecode } from 'jwt-decode';
 
 function AdminUsuarios()
 {const [form, setForm] = useState({
@@ -13,11 +15,28 @@ function AdminUsuarios()
   });
   const [loading, setLoading] = useState(true);
   const [usuarios, setUsuarios] = useState([]);
+  const [nombre, setNombre] = useState('');
+  const navigate = useNavigate();
+  
 
-
-  useEffect(() => {
-    obtenerUsuarios();
-  }, []);
+   useEffect(() => {
+      const token = localStorage.getItem('token');
+  
+      if (!token) {
+        navigate('/');
+        return;
+      }
+  
+      try {
+        const decoded = jwtDecode(token);
+        setNombre(decoded.nombre);
+        obtenerUsuarios();
+  
+      } catch {
+        localStorage.removeItem('token');
+        navigate('/');
+      }
+    }, []);
 
    const obtenerUsuarios = async () => {
     try {
@@ -30,31 +49,26 @@ function AdminUsuarios()
     }
   };
 
-  if (loading) return <p>Cargando usuarios...</p>;
-
-
-
-
-  
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+   e.preventDefault();
 
     try {
       await api.post('/usuarios', form);
       alert('Usuario creado correctamente');
       setForm({ nombre: '', usuario: '', contrasena: '', rol: 'mesero' });
+      obtenerUsuarios();
     } catch (error) {
       alert(error.response?.data?.error || 'Error al crear usuario');
     }
   };
 
   return (
-    <><Navbar />
+    <><Navbar nombre={nombre} />
 
     
     <div className="admin-usuarios">
@@ -96,10 +110,16 @@ function AdminUsuarios()
         <button type="submit">Crear Usuario</button>
       </form>
     </div>
-    <h2>Lista de Usuarios</h2>
-      <TablaUsuarios usuarios={usuarios} />
+
+    {loading ? (
+        <p>Cargando usuarios...</p>
+      ) : (
+        <TablaUsuarios usuarios={usuarios} 
+        obtenerUsuarios={obtenerUsuarios}
+        />
+      )}
     </>
   );
 }
 
-export default AdminUsuarios;
+export default AdminUsuarios ;

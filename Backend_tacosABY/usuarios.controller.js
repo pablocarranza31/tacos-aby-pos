@@ -27,4 +27,31 @@ async function obtenerUsuarios(req, res) {
   }
 }
 
-module.exports = { crearUsuario, obtenerUsuarios };
+
+async function actualizarUsuario(req, res) {
+  const { id } = req.params;
+  const { nombre, usuario, contrasena, rol } = req.body;
+
+  try {
+    const hash = await bcrypt.hash(contrasena, 10);
+    const result = await pool.query(
+      'UPDATE usuarios SET nombre=$1, usuario=$2, contrasena=$3, rol=$4 WHERE id_usuario=$5 RETURNING id_usuario AS id, nombre, usuario, rol',
+      [nombre, usuario, hash, rol, id]
+    );
+    res.json(result.rows[0]);
+  } catch (error) {
+    res.status(500).json({ error: 'Error al actualizar usuario' });
+  }
+}
+
+async function eliminarUsuario(req, res) {
+  const { id } = req.params;  
+  try {
+    await pool.query('DELETE FROM usuarios WHERE id_usuario=$1', [id]);
+    res.json({ message: 'Usuario eliminado correctamente' });
+  } catch (error) {
+    res.status(500).json({ error: 'Error al eliminar usuario' });
+  } 
+}
+
+module.exports = { crearUsuario, obtenerUsuarios, actualizarUsuario, eliminarUsuario };

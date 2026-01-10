@@ -32,7 +32,7 @@ function Admin() {
 
         <div className="admin-card logout" onClick={() => {
           localStorage.removeItem('token');
-          navigate('/');
+          navigate('/'); 
         }}>
           🚪 Cerrar sesión
         </div>

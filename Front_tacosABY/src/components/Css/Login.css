@@ -39,6 +39,12 @@
   margin-bottom: 1.5rem;
 }
 
+.logotipo {
+  width: 30%;
+  height: 30%;
+  margin-right: 0.75rem;
+}
+
 .logo-text {
   font-size: 1.75rem;
   font-weight: 700;

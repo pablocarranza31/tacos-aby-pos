@@ -16,9 +16,10 @@ app.use(cors({
 }));
 app.use(express.json());
 const authRouter = require('./auth');
-const { crearUsuario,obtenerUsuarios } = require('./usuarios.controller');
+const { crearUsuario,obtenerUsuarios,actualizarUsuario,eliminarUsuario } = require('./usuarios.controller');
 const verificarToken = require('./middleware/auth');
 const soloAdmin = require('./middleware/soloAdmin');
+
 
 // Rutas
 app.get('/', (req, res) => {
@@ -29,6 +30,12 @@ app.get('/', (req, res) => {
 app.post('/usuarios',verificarToken,soloAdmin, crearUsuario);
 
 app.get('/usuarios/lista',verificarToken,soloAdmin, obtenerUsuarios);
+
+app.put('/usuarios/:id',verificarToken,soloAdmin,actualizarUsuario);
+
+app.delete('/usuarios/:id',verificarToken,soloAdmin, eliminarUsuario);
+
+
 
 app.use('/auth', authRouter);
 

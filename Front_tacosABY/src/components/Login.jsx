@@ -30,7 +30,6 @@ function Login() {
 
       // opcional: leer rol
       const decoded = jwtDecode(token);
-      console.log('Usuario:', decoded);
 
       navigate('/home'); //  redirige
     } catch (error) {
@@ -43,6 +42,7 @@ function Login() {
       <div className="login-container">
         <div className="logo">
           <div className="logo-icon"></div>
+          <img src={`${import.meta.env.BASE_URL}icons/logoTacosAby.png`} className="logotipo" />
           <div className="logo-text">Tacos Aby</div>
         </div>
         <div className="welcome-text">
@@ -51,12 +51,12 @@ function Login() {
 
         <form className="login-form"  onSubmit={handleSubmit}>
           <div className="form-group">
-            <label>Correo electrónico</label>
+            <label>Usuario</label>
             <input
               type="text"
               value={usuario}
               onChange={(e) => setUsuario(e.target.value)}
-              placeholder="Ingresa tu correo"
+              placeholder="Ingresa tu usuario"
               required
             />
           </div>

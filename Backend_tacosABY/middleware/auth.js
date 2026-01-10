@@ -11,7 +11,7 @@ function verificarToken(req, res, next) {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.usuario = decoded; // 👈 CLAVE
+    req.usuario = decoded; // Agregar datos del usuario al request
     next();
   } catch (error) {
     return res.status(401).json({ error: 'Token inválido' });
