@@ -1,7 +1,7 @@
 import React from "react";
 import Table from 'react-bootstrap/Table';
 import ModalEditar from './ModalEditar';
-import api from '../api/axiosConfig';
+import api from '../../api/axiosConfig';
 import ModalEliminarUser from './ModalEliminarUser';
 
 function TablaUsuarios({ usuarios, obtenerUsuarios }) {
@@ -76,7 +76,7 @@ const stickyStyle = {
               <td> <span className={`badge ${
                       usuario.rol === 'admin'
                       ? 'bg-danger'
-                      : usuario.rol === 'mesero'
+                      : usuario.rol === 'mesero' || usuario.rol === 'cocinero' || usuario.rol === 'cajero'
                       ? 'bg-primary'
                       : 'bg-secondary'
                     }`}>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import api from '../api/axiosConfig'; // si no lo tienes, abajo te lo doy
-import './Css/AdminUsuarios.css';
-import Navbar from './Navbar';
+import api from '../../api/axiosConfig'; // si no lo tienes, abajo te lo doy
+import '../Css/AdminUsuarios.css';
+import Navbar from '../common/Navbar';
 import TablaUsuarios from './TablaUsuarios';
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';

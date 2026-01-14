@@ -1,4 +1,4 @@
-import './Css/Admin.css';
+import '../Css/Admin.css';
 import { useNavigate } from 'react-router-dom';
 
 function Admin() {

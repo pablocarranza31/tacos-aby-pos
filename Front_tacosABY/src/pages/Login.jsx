@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
-import './Css/Login.css'; 
+import '../components/Css/Login.css'; 
 import api from '../api/axiosConfig';
 
 

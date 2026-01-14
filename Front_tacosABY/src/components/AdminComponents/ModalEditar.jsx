@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import api from '../api/axiosConfig';
+import api from '../../api/axiosConfig';
 
 
 function ModalEditar({ show, handleClose, usuario, obtenerUsuarios }) {  

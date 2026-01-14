@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Css/Tomar_Pedido.css';
+import '../Css/Tomar_Pedido.css';
 
 // --- DEFINICIÓN DEL MENÚ ---
 const MENU_PRODUCTOS = [
