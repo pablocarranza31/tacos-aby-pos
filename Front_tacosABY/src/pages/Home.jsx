@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
-import '../components/Css/Home.css';
+import '../Css/Home.css';
 import Navbar from '../components/common/Navbar';
 
 function Home() {

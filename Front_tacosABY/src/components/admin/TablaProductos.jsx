@@ -1,6 +1,6 @@
 import React from "react";
 import Table from 'react-bootstrap/Table';
-import ModalEditar from './ModalEditar';
+import ModalEditar from './ModalEditarUser';
 import api from '../../api/axiosConfig';
 import ModalEliminarUser from './ModalEliminarUser';
 

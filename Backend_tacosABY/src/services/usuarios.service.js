@@ -8,8 +8,8 @@ async function crearUsuario(data) {
 
   const result = await pool.query(
     `INSERT INTO usuarios (nombre, usuario, contrasena, rol)
-     VALUES ($1,$2,$3,$4)
-     RETURNING id_usuario AS id, nombre, usuario, rol`,
+      VALUES ($1,$2,$3,$4)
+      RETURNING id_usuario AS id, nombre, usuario, rol`,
     [nombre, usuario, hash, rol]
   );
 

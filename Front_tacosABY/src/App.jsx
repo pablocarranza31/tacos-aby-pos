@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-import './App.css'
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-import Tomar_Pedido from "./components/pedidos/Tomar_Pedido";
-import Admin from "./components/AdminComponents/Admin";
-import AdminRoute from "./AdminRoute";
-import AdminUsuarios from "./components/AdminComponents/AdminUsuarios";
+import Tomar_Pedido from "./feature/tomarPedido/Tomar_Pedido";
+import Admin from "./pages/Admin";
+import AdminRoute from "./routes/AdminRoute";
+import AdminUsuarios from "./components/admin/AdminUsuarios";
+import AdminProductos from "./components/admin/AdminProductos";
 
 function App() {
 
@@ -14,16 +14,13 @@ function App() {
       <Route path="/" element={<Login />} />
       <Route path="/home" element={<Home />} />
       <Route path="/tomar-pedido" element={<Tomar_Pedido />} />
-      <Route path="/admin" element={
-        <AdminRoute>
-          <Admin />
-        </AdminRoute>
-      } />
-      <Route path="/admin/usuarios" element={
-        <AdminRoute>
-          <AdminUsuarios />
-        </AdminRoute>
-      } />
+      
+  {/* RUTAS ADMIN */}
+  <Route element={<AdminRoute />}>
+    <Route path="/admin" element={<Admin />} />
+    <Route path="/admin/usuarios" element={<AdminUsuarios />} />
+    <Route path="/admin/productos" element={<AdminProductos />} />
+  </Route>
     </Routes>
   )
 }
